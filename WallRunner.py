@@ -16,7 +16,7 @@ pygame.key.set_repeat(100, 100)
 
 # create a person at position (40,40)
 guy = Person(40,40)
-theWall = Wall(150,150)
+theWall = Wall(350,250)
 
 # A list that keeps track of the areas of screen that have changed
 changedRecs=[]
