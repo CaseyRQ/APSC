@@ -20,15 +20,22 @@ class Hopper:
         
     # move left unless you hit the edge
     def moveLeft(self):
-        pass
+        self.x = self.x - 7
+        myRect = self.getRec()
+        if self.x < 0:
+            self.x += 7
         
     # move left unless you hit the edge 
     def moveRight(self):
-        pass
+        self.x = self.x + 7
+        myRect = self.getRec()
+        if self.x + myRect[2] > 800:
+            self.x -= 7
     
     # This DOES NOT change self.y
     # sets self.up to True if the self.up variable is False and self.upCounter is 0
     def moveUp(self):
+        
         pass
         
     
