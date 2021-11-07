@@ -12,7 +12,7 @@ class Person:
     def __init__(self, newX, newY):
         self.x = newX
         self.y = newY
-        self.img = pygame.image.load("wall.gif")
+        self.img = pygame.image.load("dude.gif")
     
         
     # draw the image on the surface
