@@ -21,22 +21,17 @@ class Hopper:
     # move left unless you hit the edge
     def moveLeft(self):
         self.x = self.x - 7
-        myRect = self.getRec()
-        if self.x < 0:
-            self.x += 7
         
     # move left unless you hit the edge 
     def moveRight(self):
         self.x = self.x + 7
-        myRect = self.getRec()
-        if self.x + myRect[2] > 800:
-            self.x -= 7
     
     # This DOES NOT change self.y
     # sets self.up to True if the self.up variable is False and self.upCounter is 0
     def moveUp(self):
+        if self.up == False and self.upCounter == 0:
+            self.up = True
         
-        pass
         
     
     # moves hopper up or down based on the values
@@ -47,17 +42,31 @@ class Hopper:
             # increase upCounter
             # if hopper has moved up a number of times
                 # set up to false
+        if self.up == True:
+             self.y = self.y - 25
+             self.upCounter = self.upCounter + 1
+             if self.upCounter > 4:
+                self.up = False
+        elif self.upCounter > 0:
+            self.y = self.y + 25
+            self.upCounter = self.upCounter - 1
+
 
         # else if upCounter is greater than 0
             # move hopper down
             # decrease upCounter
-        pass
     
     
     # determine if hopper has collided with an object 
     def collide(self, other):
         # Get other's x, y, width and height
-        
+        myRec = self.getRec()
+        otherRec = other.getRec()
+        oRight  = otherRec[0] + otherRec[2]
+        oBottom  = otherRec[1] + otherRec[3]
+    
+        right = myRec[0] + myRec[2]
+        bottom = myRec[1] + myRec[3]
         
         # Get person's width and height
         
@@ -79,7 +88,8 @@ class Hopper:
         
         # else
             # person and object do intersect
-        
+        if (otherRec[0] <= right) and (oRight >= self.x) and (otherRec[1] <= bottom) and (oBottom >= self.y):
+             return True
         
         return False
 
