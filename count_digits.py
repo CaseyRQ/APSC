@@ -2,10 +2,13 @@
 #www.apluscompsci.com
 
 def go( num ):
-  return 0
+  count= 0 
+  while ( num > 0):
+    num = int(num / 10)
+    count = count + 1
+  return count 
     
-    
-while ( True ):
+
     # enter a number
-    val = int(input("Enter a number :: "))
-    print( go( val ) )
+val = int(input("Enter a number :: "))
+print( go( val ) )
