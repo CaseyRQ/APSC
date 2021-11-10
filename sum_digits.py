@@ -2,7 +2,12 @@
 #www.apluscompsci.com
 
 def go( num ):
-  return 0
+  sum = 0
+  while (num > 0):
+    sum = sum + (num % 10)
+    num = num // 10
+  return sum
+  
     
     
 while ( True ):
