@@ -2,7 +2,13 @@
 #www.apluscompsci.com
 
 def go( num ):
-  return 0
+  odd_count = 0
+  while num > 0:
+    last_digit = num % 10
+    if (last_digit % 2 == 1):
+      odd_count += 1 
+    num = num // 10
+  return odd_count
     
     
 print( go( 234 ) )
