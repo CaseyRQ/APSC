@@ -2,7 +2,13 @@
 #www.apluscompsci.com
 
 def go( num ):
-  return 0
+  count = 0
+  sum = 0
+  while num > 0:
+    count += 1
+    if num % 2 == 0:
+      count = count + sum
+      return count
     
     
 print( go( 234 ) )
