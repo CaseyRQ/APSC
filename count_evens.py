@@ -3,11 +3,10 @@
 
 def go( num ):
   count = 0
-  sum = 0
   while num > 0:
     count += 1
     if num % 2 == 0:
-      count = count + sum
+      count = count + 1
       return count
     
     
