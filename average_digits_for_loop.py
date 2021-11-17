@@ -2,7 +2,13 @@
 #www.apluscompsci.com
 
 def go( num ):
-  return 0
+  num1 = str(num)
+  add_count = 0
+  count = 0
+  for c in num1:
+    count += 1
+    add_count += int(c)
+  return add_count/count
     
     
 while ( True ):
