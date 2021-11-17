@@ -2,7 +2,12 @@
 #www.apluscompsci.com
 
 def go( num ):
-  return 0
+  odd_count = 0
+  for c in str(num):
+    c = int(c)
+    if c % 2 == 1:
+      odd_count += 1
+  return odd_count
     
     
 print( go( 234 ) )
