@@ -36,3 +36,7 @@ def draw(window):
     
     
     # Draw 30 rocks in random x and y positions
+    for t in range(30):
+        x = random.randint(0,790)
+        y = random.randint(0,690)
+        window.blit(rock, (x,y))
