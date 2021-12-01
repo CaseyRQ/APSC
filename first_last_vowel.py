@@ -2,7 +2,12 @@
 # www.apluscompsci.com
 
 def go( word ):
-  return "add code here"
+  vowels = "AEIOUYaeiouy"
+  if vowels.find(word[0])>-1:
+    return "Yes"
+  if vowels.find(word[-1])>-1:
+    return "Yes"
+  else: "No"
 
 
 print ( go( "dog#cat#pigaplus" ) )
