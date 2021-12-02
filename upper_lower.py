@@ -2,7 +2,9 @@
 # www.apluscompsci.com
 
 def go( a, b ):
-  return "add code here"
+  if b == True: 
+    return a.upper()
+  return a.lower()
 
 
 print ( go( "D0g", True ) )
