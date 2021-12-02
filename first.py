@@ -2,7 +2,10 @@
 # www.apluscompsci.com
 
 def go( word ):
-  return "code";
+  f = word[0]
+  if (word.find(f,1) > 0):
+    return "Yes"
+  return "no"
 
 
 print ( go( "dog#cat#pigaplus" ) )
