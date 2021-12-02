@@ -2,7 +2,9 @@
 # www.apluscompsci.com
 
 def go( a, b ):
-  return 0
+ 
+  return (len(a) + len(b))/2
+
 
 
 print ( go( "dog", "cats" ) )
