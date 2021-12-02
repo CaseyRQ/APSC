@@ -4,7 +4,10 @@
 def flip_em( s ):
   #add in code to flip the names
   #and add in a comma between the flipped names
-  return "add code here"
+  s_l = s.split(" ")
+  newstring = "{}, {}".format(s_l[1],s_l[0])
+  return  newstring
+
 
 print ( flip_em("aplus comp") )
 print ( flip_em("comp aplus") )
