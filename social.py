@@ -2,7 +2,9 @@
 # www.apluscompsci.com
 
 def go( word ):
-  return "code"
+  if word[3] == "-" and word[6] == "-":
+    return word[7:12]
+  return "bad"
 
 
 print ( go( "463-44-5678" ) )
