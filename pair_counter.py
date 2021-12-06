@@ -7,7 +7,13 @@ def count_pairs( s ):
   #return the number of letter pairs in each string
   #aadogbbcatcc would return 3
   #aadogcatcc would return 2
-  return 0
+  count = 0
+  i = 0
+  while i < len(s) - 1:
+    if s[i] == s[i+1]:
+      count += 1
+    i = i +1
+  return count
 
 print ( count_pairs("ddogccatppig") )
 print ( count_pairs("dogcatpig") )
