@@ -2,7 +2,16 @@
 #www.apluscompsci.com
 
 def cipher( x, dist ):
-  return "add code here"
+  alpha = 'abcdefghijklmnopqrstuvwxyz'
+  shiftalpha = alpha[-1*dist: len(alpha)] + alpha[0:len(alpha)]
+  newstr = ""
+  pos = 0
+  for char in x:
+    pos = alpha.find(char)
+    newstr = newstr + shiftalpha[pos]
+  return newstr
+      
+
 
 
 print ( cipher("abcdef", 1) )
