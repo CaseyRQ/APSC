@@ -1,7 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np 
 
-x = np.array(range(100))
+def graph_distance(distance, time):
+x = 
 y = x**2
 plt.colorbar()
 plt.plot(x,y + 5)
