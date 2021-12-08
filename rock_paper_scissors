@@ -1,0 +1,8 @@
+#Rock Paper scissors
+
+Player = input("Pick a number: 0, 1, 2")
+
+def RPS (input):
+    if Player is input:
+        compchoice = input.randint(0,2)
+    return compchoice and Player
