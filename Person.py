@@ -28,19 +28,23 @@ class Person:
         
     """  move person left and set the costume facing left. """ 
     def moveLeft(self):
-        1/1
+        self.x = -25
+        self.cos = 3
     
     """  move person right and set the costume facing right   """ 
     def moveRight(self):
-        1/1
+        self.x = +25
+        self.cos = 2
         
     """  move person up and set the costume facing up   """ 
     def moveUp(self):
-        1/1
+        self.y = -25
+        self.cos = 1
         
     """  move person down and set the costume facing down   """ 
     def moveDown(self):
-        1/1
+        self.y = +25
+        self.cos = 0
     
     
     """
