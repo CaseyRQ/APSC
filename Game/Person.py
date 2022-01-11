@@ -30,21 +30,32 @@ class Person:
     def moveLeft(self):
         self.x = -25
         self.cos = 3
+        myRect = self.getRec()
+        if self.x + myRect[2] < 800:
+            self.x = -25
     
     """  move person right and set the costume facing right   """ 
     def moveRight(self):
         self.x = +25
         self.cos = 2
+        myRect = self.getRec()
+        if self.x + myRect[2] > 800:
+            self.x = -25
         
     """  move person up and set the costume facing up   """ 
     def moveUp(self):
         self.y = -25
         self.cos = 1
-        
+        myRect = self.getRec()
+        if self.y + myRect[3] < 600:
+            self.y = -25
     """  move person down and set the costume facing down   """ 
     def moveDown(self):
         self.y = +25
         self.cos = 0
+        myRect = self.getRec()
+        if self.y + myRect[3] > 600:
+            self.y = -25
     
     
     """
