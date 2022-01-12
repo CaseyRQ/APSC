@@ -8,10 +8,10 @@ def drawGround(window):
     """
     load all images into a list 
     """
-    images = [pygame.image.load("/Users/caseyquadros/Desktop/APSC/gif/grass.gif").convert(), 
-                       pygame.image.load("/Users/caseyquadros/Desktop/APSC/gif/gtoroad.gif").convert(),
-                       pygame.image.load("/Users/caseyquadros/Desktop/APSC/gif/road.gif").convert(), 
-                       pygame.image.load("/Users/caseyquadros/Desktop/APSC/gif/rtograss.gif").convert()]
+    images = [pygame.image.load("grass.gif").convert(), 
+                       pygame.image.load("road.gif").convert(),
+                       pygame.image.load("rtograss.gif").convert(), 
+                       pygame.image.load("gtoroad.gif").convert()]
     
     
     """
@@ -39,16 +39,19 @@ def drawGround(window):
     Use the y position to determine which tile to draw
     Increase the y
     """
-    while yPos < 600:
-        if yPos <= 50:
-            window.blit(images[0], (xPos,yPos))
-        elif yPos > 50 and yPos < 60:
-            window.blit(images[1], (xPos,yPos))
-        elif yPos > 60 and yPos < 500: 
-            window.blit(images[2], (xPos,yPos))
-        elif yPos > 500 or yPos < 600:
-            window.blit(images[3], (xPos,yPos))
-        
+    while xPos < 800:
+        while yPos < 600:
+            if yPos < 100 or yPos > 500:
+                window.blit(images[0], (xPos,yPos))
+            elif yPos < 150:
+                window.blit(images[3], (xPos,yPos))
+            elif yPos > 450: 
+                window.blit(images[2], (xPos,yPos))
+            else:
+                window.blit(images[1], (xPos,yPos))
+            yPos += 50
+        xPos += 50
+        yPos = 0
     """
     Increase the x and reset the y
     """
