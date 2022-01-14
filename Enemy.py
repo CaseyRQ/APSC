@@ -25,6 +25,10 @@ class Enemy:
     """ 
     def move(self):
         self.x += self.steps
+        self.x += 25
+        myRect = self.getRec()
+        if self.x + myRect[2] > 800:
+            self.x -= 25
 
     """
     Get a rectangle that represents the enemy
