@@ -2,10 +2,11 @@
 # www.apluscompsci.com
 
 def go( ann ):
-  goingdown = False 
-  for n in ann:
-    if ( ann[n] > ann[n+1] ):
-      goingdown = True
+  goingdown = False
+  for n in range(0, len(ann) - 1) :
+      if ann[n] <= ann[n+1]:
+        return False
+      
   return True
 
 
