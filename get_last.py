@@ -2,7 +2,12 @@
 # www.apluscompsci.com
 
 def go( ann ):
-  list = []
+  lst= []
+  for n in range(len(ann)-1):
+    if n > ann[n-1]:
+      list.append.lst(n)
+    if n <= ann[n-1]:
+      return lst
   return list
 
 
