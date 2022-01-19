@@ -1,8 +1,14 @@
 #(c) A+ Computer Science
 # www.apluscompsci.com
 
-def go( list ):
-  return 0
+import re
+
+
+def go( lst ):
+  for n in range(len(lst)-1):
+   if lst[n+1] == lst[n]:
+      return False
+  return True
 
 
 print ( go( [-99,1,2,3,4,5,6,6,6,6,6,7,8,9,10,12345,5,5,5,5] ) )
