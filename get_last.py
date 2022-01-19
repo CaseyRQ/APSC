@@ -3,12 +3,11 @@
 
 def go( ann ):
   lst= []
-  for n in range(len(ann)-1):
-    if n > ann[n-1]:
-      list.append.lst(n)
-    if n <= ann[n-1]:
-      return lst
-  return list
+  last = ann[-1]
+  for n in range(0, len(ann)-1):
+    if ann[n] > last:
+      lst.append(ann[n])
+  return lst
 
 
 print ( go( [-99,1,2,3,4,5,6,7,8,9,10,5] ) )
