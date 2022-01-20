@@ -1,8 +1,25 @@
 #(c) A+ Computer Science
 # www.apluscompsci.com
 
+from curses import mouseinterval
+from itertools import count
+
+
 def go( list ):
-  return 0
+  count = 0
+  mostCount = 0
+  mostNumber = 0
+  for n in range(len(list)-1):
+    for i in range(n + 1,len(list)-1):
+      if list[n] == list[i]:
+        count += 1
+    if mostCount < count :
+      mostNumber = list[n]
+      mostCount = count
+  if mostCount == 0:
+      mostNumber = list[0]
+  return mostNumber
+ 
 
 
 print ( go( [-99,1,2,3,4,5,6,6,6,6,6,7,8,9,10,12345,5,5,5,5] ) )
