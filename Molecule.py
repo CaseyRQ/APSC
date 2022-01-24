@@ -1,3 +1,4 @@
+from hashlib import new
 import math, random
 import pygame
 from pygame.locals import *
@@ -21,7 +22,7 @@ class Molecule:
 
     # Draw the molecule
     def draw(self,window):
-        pass
+        pygame.draw.circle(window,(255,0,0),(self.x,self.y), self.radius)
 
         
     def move(self):
@@ -30,23 +31,26 @@ class Molecule:
         (xSpeed, ySpeed) = self.moveInDirection()
         
         #change x by xSpeed
-        
+        self.x += xSpeed
         
         # check to see if the molecule has gone off 
         # the screen to the right or left
-        
+        if self.x > 800 or self.x < 0:
+            self.x -= xSpeed
             # undo the change to x
-            
+            self.changeDirection()
             # change the direction
             
         
         # change y by YSpeed
-        
+        self.y += ySpeed
         # check to see if the molecule has gone off 
         # the screen
+        if self.y > 600 or self.y < 100:
+            self.y -= ySpeed
         
             # undo the change to y
-            
+            self.changeDirection()
             # change the direction
             
     
@@ -55,19 +59,21 @@ class Molecule:
     # Increase speed for all Molecules
     # Change Molecule.speed
     def increaseSpeed(self):
+        Molecule.speed +=5
         pass
 
     # Decrease speed for all Molecules
     def decreaseSpeed(self):
+        Molecule.speed -=5
         pass
 
     # Set Molecule speed to 10
     def resetSpeed(self):
-        pass
+        Molecule.speed = 10
     
     # Get Molecule Speed
     def getSpeed(self):
-        return 0
+        return Molecule.speed
 
     
     
