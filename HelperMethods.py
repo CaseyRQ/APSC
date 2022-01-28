@@ -2,6 +2,8 @@
 # www.apluscompsci.com
 
 import string,random
+
+from pyparsing import Word
 from WordCounter import *
 
 def countWords(words, stop):
@@ -9,18 +11,20 @@ def countWords(words, stop):
     wordCount=[]
     
     # Loop through all the items in words
+    for i in words:
 
     # if the word is not in the stop list (is not a commonly used word)
-
+        if i not in stop:
+            
     # if the word is not already in the list of WordCounters
-
+            if WordCounter(i,1) not in wordCount:
+            
     # Create a new WordCounter with the count
-
-                
+                wordCount.append(WordCounter(i,words.count(i)))
+          
     #sort the dictionary in descending order
-
-    
-    return wordCount
+    wordCount=sorted(wordCount, key=lambda word:word.getCount())
+    wordCount.reverse()
 
 
 def getList(textFile, stopFile):
