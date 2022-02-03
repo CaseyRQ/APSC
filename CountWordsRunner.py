@@ -4,7 +4,7 @@
 from HelperMethods import *
 import WordCounter
 
-words = getList("text.txt", "stop_words.txt")
+words = getList("/Users/caseyquadros/desktop/apsc/text.txt", "/users/caseyquadros/desktop/apsc/stop_words.txt")
 
 for w in words:
     print(w)

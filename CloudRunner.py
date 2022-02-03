@@ -16,7 +16,7 @@ result = messagebox.askquestion("Type of Word Cloud", "Do you want a horizontal 
 
 
 # Getting List of words
-words = getList("text.txt", "stop_words.txt")
+words = getList('text.txt', 'stop_words.txt')
 # color scheme
 background = [50, 50, 50]
 

@@ -26,6 +26,8 @@ def countWords(words, stop):
     wordCount=sorted(wordCount, key=lambda word:word.getCount())
     wordCount.reverse()
 
+    return wordCount
+
 
 def getList(textFile, stopFile):
     # Words to get rid of
