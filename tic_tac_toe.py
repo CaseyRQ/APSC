@@ -1,0 +1,1 @@
+Player = (input("Do you want to be X or O? Type either 'X' or 'O':\n" ))
