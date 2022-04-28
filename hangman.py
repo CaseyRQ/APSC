@@ -1,15 +1,14 @@
 import random
 
-print("Welcome to Hangman! The category is Star Wars.")
-
-answers = ["AnakinSkywalker","JabatheHutt","ObiWanKenobi","Kashyyk","CalKestis","MaytheForceBeWithYou","DarthVader","CountDoku","Ashoka","PadmeAmidala","Tatooine","Naboo","DarthMalgus","DarthRevan","Lightsaber","ForceWeilders","OldRepublic","JediCouncil","RevengeoftheSith","Padawan"]
-
-def get_word():
-    word = random.choice(answers)
-    return word.upper()
-
 
 def play(word):
+    mychoice = input("Choose a category: 1. Star Wars 2. Animals 3. Superheroes. Type 1, 2, or 3: \n")
+    if mychoice == "1":
+        word = random.choice(starwars)
+    if mychoice == "2":
+        word = random.choice(animals)
+    if mychoice == "3":
+        word = random.choice(superheroes)
     word_completion = "_" * len(word)
     guessed = False
     guessed_letters = []
@@ -19,14 +18,17 @@ def play(word):
     print(word_completion)
     print("\n")
     while not guessed and tries > 0:
-        guess = input("Please guess a letter or word: ").upper()
+        guess = input("Please guess a letter or word: ")
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
                 print("You already guessed the letter", guess)
+                print ("Guessed Letters: " ([guessed_letters]))
             elif guess not in word:
                 print(guess, "is not in the word.")
                 tries -= 1
                 guessed_letters.append(guess)
+                print ("Guessed Letters: "[guessed_letters])
+                print(guessed_letters, " have been guessed")
             else:
                 print("Good job,", guess, "is in the word!")
                 guessed_letters.append(guess)
@@ -131,14 +133,18 @@ def display_hangman(tries):
     ]
     return stages[tries]
 
-
+starwars = ["anakinskywalker","jabathehutt","obiwankenobi","kashyyk","calkestis","maytheforcebewithyou","darthvader","countdoku","ashoka","padmeamidala","tatooine","naboo","darthmalgus","darthrevan","lightsaber","forceweilders","oldrepublic","jedicouncil","revengeofthesith","padawan"]
+animals = ["zebra","dog", "horse", "panda", "cat", "mouse", "elephant", "tiger", "lion", "cheetah", "giraffe", "octopus", "racoon", "fox", "wolf", "monkey", "gorilla", "chimpanzee", ]
+superheroes = ["captainamerica", "ironman", "hulk", "batman", "flash", "superman", "wonderwoman", "blackwidow", "aquaman", "catwoman", "greenlantern", "spiderman", "deadpool", "daredevil"]
+word = ""
+print("Welcome to Hangman!")
+play(word)
+ 
 def main():
-    word = get_word()
-    play(word)
     while input("Play Again? (Y/N) ").upper() == "Y":
-        word = get_word()
         play(word)
+    print("Thank you for playing!")
 
 
 if __name__ == "__main__":
-    main()
+        main()
